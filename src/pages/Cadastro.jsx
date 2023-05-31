@@ -1,30 +1,26 @@
-import React from 'react';
-import styled from 'styled-components';
-import resetcss from './css/reset.css'
-import TelaLogin from './pages/TelaLogin';
-import Cadastro from './pages/Cadastro';
-import Habitos from './pages/Habitos';
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import styled from "styled-components"
 
-  
-
-export default function App() {
-  return (
-    <>
-
-
-<BrowserRouter>
-<Routes>
-  <Route path="/" element={ <TelaLogin />} /> 
-  <Route path="/cadastro" element={<Cadastro /> } /> 
-  <Route path="/habitos" element={<Habitos />} /> 
-{/*  <Route path="/hoje" element={<Hoje />} /> 
-  <Route path="/historico" element={<Historico />} /> */}
- </Routes>
-</BrowserRouter>
-    </>
-
-  );
+export default function Cadastro() {
+    return(
+        <Container>
+    <ImageContainer>
+      <img src="/caminho/para/sua/imagem.jpg" alt="Imagem Centralizada" />
+    </ImageContainer>
+    <Logo>
+      <h1>Trackit</h1>
+    </Logo>
+    <FormContainer>
+      <input type="email" placeholder="email" />
+      <input type="password" placeholder="senha" />
+      <input type="text" placeholder='nome' />
+      <input type="url" placeholder='foto' />
+      <button type="submit">Cadastrar</button>
+    </FormContainer>
+    <SignupLink>
+  Já tem uma conta? <a href="#">Faça login!</a>
+    </SignupLink>
+  </Container> 
+    )
 }
 
 const Container = styled.div`

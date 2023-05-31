@@ -1,30 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
-import resetcss from './css/reset.css'
-import TelaLogin from './pages/TelaLogin';
-import Cadastro from './pages/Cadastro';
-import Habitos from './pages/Habitos';
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import styled from "styled-components";
+import {Link} from "react-router-dom"
 
-  
-
-export default function App() {
-  return (
-    <>
-
-
-<BrowserRouter>
-<Routes>
-  <Route path="/" element={ <TelaLogin />} /> 
-  <Route path="/cadastro" element={<Cadastro /> } /> 
-  <Route path="/habitos" element={<Habitos />} /> 
-{/*  <Route path="/hoje" element={<Hoje />} /> 
-  <Route path="/historico" element={<Historico />} /> */}
- </Routes>
-</BrowserRouter>
-    </>
-
-  );
+export default function TelaLogin() {
+  return(
+    <Container>
+       <ImageContainer>
+         <img src="/caminho/para/sua/imagem.jpg" alt="Imagem Centralizada" />
+       </ImageContainer>
+       <Logo>
+         <h1>Trackit</h1>
+       </Logo>
+       <FormContainer>
+         <input type="email" placeholder="email" />
+         <input type="password" placeholder="senha" />
+         <button type="submit">Entrar</button>
+       </FormContainer>
+       <SignupLink to="/cadastro">
+     Não tem uma conta? Cadastre-se!
+       </SignupLink>
+     </Container>
+  )
 }
 
 const Container = styled.div`
@@ -89,7 +84,7 @@ color: white;
  
 `;
 
-const SignupLink = styled.p`
+const SignupLink = styled(Link)`
   margin-top: 20px;
 
 
