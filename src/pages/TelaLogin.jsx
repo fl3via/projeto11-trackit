@@ -1,21 +1,20 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom"
+import Logoo from "../assets/logo.svg"
 
 export default function TelaLogin() {
   return(
     <Container>
        <ImageContainer>
-         <img src="/caminho/para/sua/imagem.jpg" alt="Imagem Centralizada" />
+         <img src={Logoo} alt="Imagem Centralizada" />
        </ImageContainer>
-       <Logo>
-         <h1>Trackit</h1>
-       </Logo>
+    
        <FormContainer>
-         <input type="email" placeholder="email" />
-         <input type="password" placeholder="senha" />
-         <button type="submit">Entrar</button>
+         <input type="email" placeholder="email" data-test="email-input"  />
+         <input type="password" placeholder="senha"   data-test="password-input" />
+         <button type="submit" data-test="login-btn" >Entrar</button>
        </FormContainer>
-       <SignupLink to="/cadastro">
+       <SignupLink to="/cadastro" data-test="signup-link" >
      Não tem uma conta? Cadastre-se!
        </SignupLink>
      </Container>
@@ -33,23 +32,11 @@ const ImageContainer = styled.div`
   text-align: center;
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 180px;
+    height: 178px;
   }
 `;
 
-const Logo = styled.div`
-  text-align: center;
-
-  h1 {
-    font-family: 'Playball';
-  
-    color: #126BA5;
-    font-size: 100px;
-    font-weight: 400;
-    margin: 0;
-  }
-`;
 
 const FormContainer = styled.div`
   display: flex;

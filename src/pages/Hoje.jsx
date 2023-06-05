@@ -1,52 +1,47 @@
 import styled from "styled-components";
+import MiniLogo from "../assets/logo-mini.svg"
 
-export default function Habitos() {
-  return (
-    <Container>
-      <TopBar>
-        <Logo>Trackit</Logo>
-        <UserImage src="" alt="Foto do usuário" />
-      </TopBar>
+export default function Hoje() {
+    return (
+        <>
+            <Container>
+                <TopBar>
+                 <img src={MiniLogo} alt="logo" />
+                    <UserImage src="" alt="Foto do usuário" />
+                </TopBar>
 
-      <Content>
-        <Title><h2>Meus Hábitos</h2></Title>
+                <Content>
+                    <Title><h2>Segunda, 17/05</h2></Title>
+                    <p>67% dos hábitos concluídos</p>
+                </Content>
 
-        <AddButton>+</AddButton>
-      </Content>
-
-      <Text>
-        <input type="text" placeholder="nome do hábito" />
-        <div className="diasDaSemana">D S T Q Q S S </div>
-        <Button>
-          <button >Cancelar</button>
-          <button >Salvar</button>
-        </Button>
-      </Text>
-      <Messagem>
-        Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
-      </Messagem>
-      
-      <CardH>
-        <p>Ler 1 capítulo de livros</p>
-        <div><p>D S T Q Q S S </p></div>
-      </CardH>
-
-  
-      <CardH>
-        <p>Ler 1 capítulo de livros</p>
-        <div><p>D S T Q Q S S </p></div>
-      </CardH>
+                <CardH>
+                    <p className="p">Ler 1 capítulo de livros</p>
+                   <p className="pp">Sequência atual:  <spam>4 dias</spam> </p>
+                   <p className="pp">Seu recorde: <spam>5 dias</spam> </p>
+                   <div> <button>V</button></div>
+                  
+                </CardH>
 
 
-      <Footer>
-        <FooterText>Hábitos</FooterText>
-        <CircleButton>Hoje</CircleButton>
-        <FooterText>Históricos</FooterText>
-      </Footer>
-    </Container>
+                <CardH>
+                <p className="p">Ler 1 capítulo de livros</p>
+                   <p className="pp">Sequência atual: 4 dias</p>
+                   <p className="pp">Seu recorde: 5 dias</p>
+                   <button>V</button>
+                </CardH>
 
-  );
-}
+
+                <Footer>
+                    <FooterText>Hábitos</FooterText>
+                    <CircleButton>Hoje</CircleButton>
+                    <FooterText>Históricos</FooterText>
+                </Footer>
+            </Container>
+
+        </>
+    );
+};
 
 const Container = styled.div`
   display: flex;
@@ -70,42 +65,42 @@ const TopBar = styled.div`
   height: 70px;
 `;
 
-const Logo = styled.h1`
-font-family: 'Lexend Deca';
-font-style: normal;
-font-weight: 400;
-  font-size: 22px;
-  color: #ffff;
-`;
+
 
 const UserImage = styled.img`
   width: 51px;
   height: 51px;
   border-radius: 50%;
+  margin-left: -20px;
 `;
 
 const Content = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
- 
+margin-bottom: 15px;
+margin-top: 15px;
+
+p {
+    color: #8FC549;  
+    margin-top: 7px;
+    font-family: 'Lexend Deca';
+font-style: normal;
+font-weight: 400;
+font-size: 17.976px;
+}
 `;
 
 const Title = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px;
 
 
-h2 {font-family: 'Lexend Deca';
+
+h2 {
+    font-family: 'Lexend Deca';
 font-style: normal;
 font-weight: 400;
 font-size: 22px;
 color: #126BA5;
-margin-right: 160px;
-
 }
+
+
 
 `;
 
@@ -130,10 +125,38 @@ height: 91px;
 background: #FFFFFF;
 border-radius: 5px;
 margin-bottom: 15px;
+font-family: 'Lexend Deca';
+font-style: normal;
+padding-left: 10px;
+  padding-top: 10px;
+  color: #666666;
 
-p {
-  padding: 10px;
-}
+ .p {
+    
+font-weight: 400;
+font-size: 19px;
+line-height: 25px;
+  }
+
+  .pp {
+    font-size: 12px;
+line-height: 16px;
+  }
+
+  spam {
+color: #8FC549;
+  }
+  
+  button {
+    background: #8FC549;
+border-radius: 5px;
+width: 40px;
+height: 40px;
+border: none;
+color: #fff;
+  }
+
+  
 `;
 
 const Footer = styled.footer`
@@ -222,34 +245,4 @@ color: #DBDBDB;
 
   
  
-`;
-
-const Button = styled.div`
-button{
-  margin-right: 10px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  display: flex;
-  font-family: 'Lexend Deca';
-  font-size: 14px;
-  width: 84px;
-  height: 35px;
-  justify-content: center;
-  align-items: center;
-
-
-}
-
-button:nth-child(3) {
-color:  #52B6FF;
- 
-
-}
-button:last-child {
-  color: #fff;
-  background-color: #52B6FF;
-
-}
-
 `;

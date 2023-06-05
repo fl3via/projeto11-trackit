@@ -1,23 +1,22 @@
 import styled from "styled-components"
+import Logoo from "../assets/logo.svg"
 
 export default function Cadastro() {
     return(
         <Container>
     <ImageContainer>
-      <img src="/caminho/para/sua/imagem.jpg" alt="Imagem Centralizada" />
+      <img src={Logoo} alt="Imagem Centralizada" />
     </ImageContainer>
-    <Logo>
-      <h1>Trackit</h1>
-    </Logo>
+ 
     <FormContainer>
-      <input type="email" placeholder="email" />
-      <input type="password" placeholder="senha" />
-      <input type="text" placeholder='nome' />
-      <input type="url" placeholder='foto' />
-      <button type="submit">Cadastrar</button>
+      <input type="email" placeholder="email"  data-test="email-input" />
+      <input type="password" placeholder="senha" data-test="password-input"  />
+      <input type="text" placeholder='nome' data-test="user-name-input" />
+      <input type="url" placeholder='foto' data-test="user-image-input" />
+      <button type="submit" data-test="signup-btn" >Cadastrar</button>
     </FormContainer>
-    <SignupLink>
-  Já tem uma conta? <a href="#">Faça login!</a>
+    <SignupLink data-test="login-link">
+  Já tem uma conta? Faça login!
     </SignupLink>
   </Container> 
     )
@@ -39,18 +38,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Logo = styled.div`
-  text-align: center;
 
-  h1 {
-    font-family: 'Playball';
-  
-    color: #126BA5;
-    font-size: 100px;
-    font-weight: 400;
-    margin: 0;
-  }
-`;
 
 const FormContainer = styled.div`
   display: flex;
